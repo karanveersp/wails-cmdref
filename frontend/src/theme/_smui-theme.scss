@@ -1,0 +1,41 @@
+@use "sass:color";
+
+@use "@material/theme/color-palette";
+
+// Svelte Colors!
+@use "@material/theme/index" as theme with (
+    $primary: #ff3e00,
+    $secondary: #676778,
+    $surface: #fff,
+    $background: #fff,
+    $error: color-palette.$red-900
+);
+
+@use "@material/theme/styles";
+
+html,
+body {
+    background-color: theme.$surface;
+    color: theme.$on-surface;
+}
+
+a {
+    color: #40b3ff;
+}
+a:visited {
+    color: color.scale(#40b3ff, $lightness: -35%);
+}
+
+/* For WebKit based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f2f2f2; /* Set the background color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Set the color of the thumb */
+    border-radius: 5px; /* Add rounded corners to the thumb */
+}
